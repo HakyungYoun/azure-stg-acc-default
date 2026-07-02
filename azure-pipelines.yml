@@ -142,7 +142,7 @@ stages:
                   "planResult": "${PLAN_JSON}"
                 }
                 EOF
-                } 2>$(WORK_DIR)/error.log
+                } 2> >(tee "$(WORK_DIR)/error.log" >&2)
 
   - stage: Apply
     dependsOn: Plan
