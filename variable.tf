@@ -21,10 +21,8 @@ variable "storage_accounts" {
       is_manual_connection = optional(bool)
     }))
 
-    # 이 App GW 리소스에 걸 IAM 역할 할당 (선택).
-    # key: 할당을 식별하는 임의의 이름 (예: "team-reader", "ops-contributor")
     # principal_id: 사용자/그룹/서비스 프린시펄의 object_id (GUID)
-    # role_definition_name: 빌트인 역할 표시 이름 (예: "Reader", "Network Contributor")
+    # role_definition_name: 빌트인 역할 표시 이름 (예: "Reader", "Contributor")
     # 주의: 실행 주체(SP)에 해당 스코프의 Owner 또는 User Access Administrator 필요
     iam = optional(map(object({
       principal_id         = string
